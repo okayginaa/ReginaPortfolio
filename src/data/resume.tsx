@@ -12,6 +12,48 @@ export const DATA = {
   summary:
     "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
   avatarUrl: "/me.png",
+  photos: [
+    {
+      src: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-western.png",
+      alt: "Photo1",
+      rows: 2,
+    },
+    {
+      src: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-the-north.png",
+      alt: "Photo2",
+    },
+    {
+      src: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/developer-week.jpg",
+      alt: "Photo3",
+    },
+    {
+      src: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-davis.png",
+      alt: "Photo4",
+    },
+    {
+      src: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/ai-for-social-good.jpg",
+      alt: "Photo5",
+      rows: 2,
+    },
+    {
+      src: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/eth-waterloo.png",
+      alt: "Photo6",
+    },
+    {
+      src: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/hack-mining.png",
+      alt: "Photo7",
+      cols: 2,
+    },
+    {
+      src: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/open-source-circular-economy-days.jpg",
+      alt: "Photo8",
+    },
+    {
+      src: "https://pub-83c5db439b40468498f97946200806f7.r2.dev/hackline/space-apps.png",
+      alt: "Photo9",
+      rows: 2,
+    },
+  ],
   skills: [
     "React",
     "Next.js",
@@ -28,6 +70,7 @@ export const DATA = {
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/projects", icon: Icons.code, label: "Projects" },
   ],
   contact: {
     email: "hello@example.com",

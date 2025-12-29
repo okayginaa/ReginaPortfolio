@@ -11,7 +11,16 @@ import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
 
+type PhotoItem = { src: string; alt?: string; rows?: number; cols?: number };
+
 export default function Page() {
+  const photos: PhotoItem[] = (DATA.photos && DATA.photos.length
+    ? DATA.photos
+    : DATA.hackathons.map((h) => ({ src: h.image, alt: h.title })))
+    .filter((p) => p?.src)
+    .map((p) => ({ src: p.src, alt: p.alt, rows: (p as any).rows, cols: (p as any).cols }));
+  const photosToShow = photos.slice(0, 9);
+
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
@@ -47,6 +56,28 @@ export default function Page() {
           <Markdown className="prose max-w-full text-pretty font-sans text-sm text-muted-foreground dark:prose-invert">
             {DATA.summary}
           </Markdown>
+        </BlurFade>
+      </section>
+      <section id="photos">
+        <BlurFade delay={BLUR_FADE_DELAY * 4.5}>
+          <h2 className="text-xl font-bold">Photos</h2>
+        </BlurFade>
+        <BlurFade delay={BLUR_FADE_DELAY * 5}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 auto-rows-[220px] sm:auto-rows-[260px] lg:auto-rows-[300px] max-w-5xl mx-auto">
+            {photosToShow.map((photo, idx) => (
+              <div
+                key={(photo.src || "photo") + idx}
+                className="relative overflow-hidden rounded-xl bg-muted"
+              >
+                <img
+                  alt={photo.alt || `Photo ${idx + 1}`}
+                  src={photo.src}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </BlurFade>
       </section>
       <section id="work">
